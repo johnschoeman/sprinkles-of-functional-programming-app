@@ -7,3 +7,9 @@ Products Index
 </ul>
 
 <%= link_to "Create a New Product", new_product_path %>
+
+<%= form_tag imports_path, multipart: true do %>
+  <label for="file">upload csv</label>
+  <%= file_field_tag "file" %>
+  <%= submit_tag "Upload File" %>
+<% end %>
