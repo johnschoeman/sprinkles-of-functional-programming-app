@@ -53,6 +53,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    product = Product.find(params[:id])
+
+    render locals: { product: product }
+  end
+
   private
 
   def product_params
