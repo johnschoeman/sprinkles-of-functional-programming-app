@@ -30,6 +30,29 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def edit
+    product = Product.find(params[:id])
+
+    if product
+      render locals: { product: product }
+    else
+      flash[:error] = "Product not found"
+      redirect_to products_path
+    end
+  end
+
+  def update
+    product = Product.find(params[:id])
+
+    if product.update(product_params)
+      flash[:success] = "Product updated"
+      redirect_to products_path
+    else
+      flash[:error] = product.errors.full_messages
+      redirect_to products_path
+    end
+  end
+
   private
 
   def product_params
