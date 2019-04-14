@@ -1,5 +1,12 @@
 {
   "name": "sprinkles-of-functional-programming-app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "prettier": "prettier --write './{app/**,spec/**}/*.rb'"
+  },
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^0.10.0",
+    "prettier": "^1.17.0"
+  }
 }
