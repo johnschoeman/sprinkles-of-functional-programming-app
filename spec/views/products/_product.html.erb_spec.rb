@@ -13,11 +13,12 @@ RSpec.describe "products/_product.html.erb" do
     expect(rendered).to have_text(product.value)
   end
 
-  it "renders a delete button" do
+  it "renders a delete button and an edit link" do
     product = build_stubbed(:product)
 
     render template: "products/_product.html.erb", locals: { product: product }
 
-    expect(rendered).to have_link("Delete")
+    expect(rendered).to have_link("Edit")
+    expect(rendered).to have_button("Delete")
   end
 end
