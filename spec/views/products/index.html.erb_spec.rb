@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.describe "products/index.html.erb" do
   it "renders a list of products" do
-    product_one = build(:product)
-    product_two = build(:product)
-    product_three = build(:product)
+    product_one = build_stubbed(:product)
+    product_two = build_stubbed(:product)
+    product_three = build_stubbed(:product)
     products = [product_one, product_two, product_three]
 
     render template: "products/index.html.erb", locals: { products: products }

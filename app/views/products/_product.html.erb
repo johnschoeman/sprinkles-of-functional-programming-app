@@ -4,4 +4,5 @@
   <%= product.version %>
   <%= product.date %>
   <%= product.value %>
+  <%= button_to "Delete", product_url(product), method: :delete, confirm: "Are you sure?" %>
 </li>
