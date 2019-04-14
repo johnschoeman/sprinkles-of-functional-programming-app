@@ -8,8 +8,7 @@ RSpec.describe "user edits a product spec" do
     new_value = Faker::Number.number(5).to_i
     new_author = Faker::Name.name
 
-    visit products_path
-
+    visit product_path(product)
     click_on "Edit"
     expect(page).to have_content("Edit Product")
 

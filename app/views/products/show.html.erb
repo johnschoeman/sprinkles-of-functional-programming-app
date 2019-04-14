@@ -4,3 +4,5 @@
 <p>Created On: <%= product.date %></p>
 <p>Value: <%= product.value %></p>
 <%= link_to "Back", products_url %>
+<%= link_to "Edit", edit_product_url(product) %>
+<%= button_to "Delete", product_url(product), method: :delete, confirm: "Are you sure?" %>
