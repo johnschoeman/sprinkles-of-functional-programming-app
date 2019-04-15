@@ -9,7 +9,7 @@ RSpec.describe "products/_product.html.erb" do
     expect(rendered).to have_text(product.name)
     expect(rendered).to have_text(product.author)
     expect(rendered).to have_text(product.version)
-    expect(rendered).to have_text(product.date)
+    expect(rendered).to have_text(product.release_date)
     expect(rendered).to have_text(product.value)
   end
 

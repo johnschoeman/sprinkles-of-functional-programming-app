@@ -16,6 +16,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails"
+  gem "shoulda-matchers"
 end
 
 group :development do

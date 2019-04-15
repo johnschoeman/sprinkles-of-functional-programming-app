@@ -15,7 +15,7 @@ RSpec.describe "user visits the product index page" do
     expect(page).to have_content(product.name)
     expect(page).to have_content(product.author)
     expect(page).to have_content(product.version)
-    expect(page).to have_content(product.date)
+    expect(page).to have_content(product.release_date)
     expect(page).to have_content(product.value)
   end
 end
