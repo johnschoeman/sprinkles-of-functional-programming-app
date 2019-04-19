@@ -6,7 +6,8 @@ RSpec.describe ProductDataImporter, type: :model do
       it "saves every row in the file as new product" do
         require "csv"
         filepath = stub_csv
-        importer = ProductDataImporter.new(filepath)
+        formatter = ProductDataFormatter.new
+        importer = ProductDataImporter.new(filepath, formatter)
 
         importer.import
 
