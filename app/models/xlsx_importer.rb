@@ -1,11 +1,4 @@
-class XlsxImporter
-  attr_reader :filepath, :formatter
-
-  def initialize(filepath, formatter)
-    @filepath = filepath
-    @formatter = formatter
-  end
-
+class XlsxImporter < FileImporter
   def import
     Xlsx.foreach(filepath) do |row|
       formatted_data = formatter.build_xlsx(row)
