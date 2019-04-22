@@ -27,5 +27,32 @@ RSpec.describe ProductDataFormatter, type: :model do
                   },
                 )
     end
+
+    context "when the value has a dollar sign" do
+      it "strips the dollar sign" do
+        formatter = ProductDataFormatter.new
+        data = {
+          name: "name",
+          author: "author",
+          version: "0.0.0",
+          release_date: "20190101",
+          value: "$1230",
+          active: "true",
+        }
+
+        result = formatter.format(data)
+
+        expect(result).to eq(
+                    {
+                      name: "name",
+                      author: "author",
+                      version: "0.0.0",
+                      release_date: Time.zone.parse("20190101"),
+                      value: 1230,
+                      active: true,
+                    },
+                  )
+      end
+    end
   end
 end
