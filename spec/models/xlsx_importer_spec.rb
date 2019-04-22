@@ -7,7 +7,8 @@ RSpec.describe XlsxImporter, type: :model do
       stub_xlsx(filename)
 
       formatter = ProductDataFormatter.new
-      importer = XlsxImporter.new(filename, formatter)
+      builder = XlsxBuilder.new(formatter)
+      importer = XlsxImporter.new(filename, builder)
 
       importer.import
 

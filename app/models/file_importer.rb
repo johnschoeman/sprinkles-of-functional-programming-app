@@ -1,9 +1,9 @@
 class FileImporter
-  attr_reader :filepath, :formatter
+  attr_reader :filepath, :builder
 
-  def initialize(filepath, formatter)
+  def initialize(filepath, builder)
     @filepath = filepath
-    @formatter = formatter
+    @builder = builder
   end
 
   def import

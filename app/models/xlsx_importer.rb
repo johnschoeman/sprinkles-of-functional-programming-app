@@ -1,8 +1,8 @@
 class XlsxImporter < FileImporter
   def import
     Xlsx.foreach(filepath) do |row|
-      formatted_data = formatter.build_xlsx(row)
-      Product.create(formatted_data)
+      built_data = builder.build(row)
+      Product.create(built_data)
     end
   end
 

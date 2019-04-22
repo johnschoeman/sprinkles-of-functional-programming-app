@@ -9,12 +9,11 @@ RSpec.describe ProductDataImporter, type: :model do
         importer = ProductDataImporter.new(filename, formatter)
         csv_importer_double = double("CsvImporter")
         allow(csv_importer_double).to receive(:import)
-        allow(CsvImporter).to receive(:new).with(filename, formatter)
-                   .and_return(csv_importer_double)
+        allow(CsvImporter).to receive(:new).and_return(csv_importer_double)
 
         importer.import
 
-        expect(CsvImporter).to have_received(:new).with(filename, formatter)
+        expect(CsvImporter).to have_received(:new)
       end
     end
 
@@ -25,12 +24,11 @@ RSpec.describe ProductDataImporter, type: :model do
         importer = ProductDataImporter.new(filename, formatter)
         xlsx_importer_double = double("XlsxImporter")
         allow(xlsx_importer_double).to receive(:import)
-        allow(XlsxImporter).to receive(:new).with(filename, formatter)
-                   .and_return(xlsx_importer_double)
+        allow(XlsxImporter).to receive(:new).and_return(xlsx_importer_double)
 
         importer.import
 
-        expect(XlsxImporter).to have_received(:new).with(filename, formatter)
+        expect(XlsxImporter).to have_received(:new)
       end
     end
 
