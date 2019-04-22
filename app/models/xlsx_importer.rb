@@ -1,11 +1,4 @@
-class XlsxImporter
-  attr_reader :filepath, :formatter
-
-  def initialize(filepath, formatter)
-    @filepath = filepath
-    @formatter = formatter
-  end
-
+class XlsxImporter < FileImporter
   def import
     workbook = RubyXL::Parser.parse(filepath)
     worksheet = workbook.worksheets.first
