@@ -6,7 +6,7 @@ class XlsxImporter < FileImporter
       if idx == 0
         next
       end
-      formatted_data = formatter.build_xlsx(row)
+      formatted_data = builder.build(row)
       Product.create(formatted_data)
     end
   end

@@ -9,9 +9,11 @@ class ProductDataImporter
   def import
     case File.extname(filepath)
     when ".csv"
-      CsvImporter.new(filepath, formatter).import
+      builder = CsvBuilder.new(formatter)
+      CsvImporter.new(filepath, builder).import
     when ".xlsx"
-      XlsxImporter.new(filepath, formatter).import
+      builder = XlsxBuilder.new(formatter)
+      XlsxImporter.new(filepath, builder).import
     else
       raise "Unknown file type"
     end

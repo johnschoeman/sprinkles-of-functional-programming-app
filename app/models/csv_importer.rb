@@ -3,8 +3,8 @@ require "csv"
 class CsvImporter < FileImporter
   def import
     CSV.foreach(filepath, headers: true) do |row|
-      formatted_data = formatter.build_csv(row)
-      Product.create(formatted_data)
+      built_data = builder.build(row)
+      Product.create(built_data)
     end
   end
 end

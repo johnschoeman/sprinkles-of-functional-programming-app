@@ -6,7 +6,8 @@ RSpec.describe CsvImporter, type: :model do
       filename = "products.csv"
       stub_csv(filename)
       formatter = ProductDataFormatter.new
-      importer = CsvImporter.new(filename, formatter)
+      builder = CsvBuilder.new(formatter)
+      importer = CsvImporter.new(filename, builder)
 
       importer.import
 
