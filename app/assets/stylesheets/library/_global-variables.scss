@@ -1,0 +1,90 @@
+// Bourbon settings
+$bourbon: (
+  "global-font-file-formats": (
+    "woff2",
+    "woff"
+  ),
+  "rails-asset-pipeline": true
+);
+
+// Typography
+$monospace-font-stack: "Consolas", "Courier New", "Monaco", monospace;
+$base-font-family: "Calibre", $font-stack-helvetica;
+$heading-font-family: $base-font-family;
+$monospace-font-family: $monospace-font-stack;
+
+// Font weights
+$light-font-weight: 300;
+$normal-font-weight: 400;
+$medium-font-weight: 500;
+
+// Font Sizes
+$base-font-size: 1rem;
+$base-font-medium: 1.2rem;
+$h1-font-size: 2.625em;
+$h2-font-size: 1.7em;
+$h3-font-size: 1.3em;
+$secondary-page-title-size: 2.133em;
+$callout-font-size: 1.5em;
+$large-base-font-size: 1.2em;
+$increased-font-size-on-xlarge-screens: $large-base-font-size;
+$small-font-size: 0.8em;
+
+// Line height
+$base-line-height: 1.7;
+$heading-line-height: 1.25;
+$solid-line-height: 1;
+$rc-line-height: 1.4375;
+
+// Spacing
+$base-spacing: 1.5rem;
+$small-spacing: $base-spacing / 2;
+$x-small-spacing: $small-spacing / 2;
+$medium-spacing: $base-spacing * 2;
+$large-spacing: $base-spacing * 3;
+$x-large-spacing: $medium-spacing * 2;
+$split-column-layout-width: 580px;
+$xx-large-spacing: $x-large-spacing * 1.5;
+$xxx-large-spacing: $xx-large-spacing * 1.5;
+$location-icon-spacing: 2rem;
+$base-letter-spacing: (1 / 16) * 1em;
+
+// Colors
+$dark-gray: #3d3e44;
+$medium-gray: #9b9aa1;
+$text-gray: #74737c;
+$light-gray: #b5b5c0;
+$light-warm-gray: #f5f5f5;
+$thoughtbot-red: #e03131;
+$white: #fff;
+$black: #000;
+$off-white: #b7bdc5;
+$transparent: rgba(0, 0, 0, 0);
+$transparent-black: rgba($black, 0.25);
+
+// Font Colors
+$base-font-color: $dark-gray;
+$subdued-font-color: $medium-gray;
+$action-color: $thoughtbot-red;
+$hover-color: $thoughtbot-red;
+$inverse-font-color: $light-gray;
+
+// Borders & Shadows
+$base-border-color: tint($light-gray, 70%);
+$base-border: 1px solid $base-border-color;
+
+// Box Shadow
+$base-box-shadow: 0 1px 2px rgba($black, 0.08);
+$large-box-shadow: 0 4px 8px 0 rgba($black, 0.1);
+$people-card-shadow: 0 4px 8px 0 rgba($black, 0.25);
+
+// Background Colors
+$base-background-color: $white;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// z-indexes
+$hidden-element-z-index: -1;
+$base-z-index: 0;
+$above-z-index: 1;
+$application-header-z-index: 5;
+$skip-nav-z-index: 10;
