@@ -1,7 +1,9 @@
 {
   "name": "sprinkles-of-functional-programming-app",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
   "scripts": {
     "prettier": "prettier --write './{app/**,spec/**}/*.rb'"
   },
