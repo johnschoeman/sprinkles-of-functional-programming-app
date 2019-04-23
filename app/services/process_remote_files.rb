@@ -19,6 +19,7 @@ class ProcessRemoteFiles
       tmp_file = Tempfile.new
       tmp_file.write(data)
       tmp_file.close
+      byebug
       ProductImportWorker.new.perform(tmp_file.path)
       print "."
     end

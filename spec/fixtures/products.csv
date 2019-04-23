@@ -1,4 +1,4 @@
 name,author,version,release_date,value,active
-name_a,author_a,1.10.3,01/01/2019,100,true
-name_b,author_b,2.9,02/01/2019,201,false
-name_c,author_c,0.53,03/01/2019,3000,true
+name_a,author_a,1.10.3,2019/01/01,100,true
+name_b,author_b,2.9,2019/02/01,201,false
+name_c,author_c,0.53,2019/03/01,3000,true

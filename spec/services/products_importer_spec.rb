@@ -3,23 +3,46 @@ require "csv"
 
 RSpec.describe ProductDataImporter do
   describe ".import" do
-    it "takes a file and creates product data from the data" do
-      filename = Rails.root.join("spec/fixtures/products.csv")
-      importer = ProductDataImporter.new
+    context "when provided a csv file" do
+      it "creates product data from the data" do
+        filename = Rails.root.join("spec/fixtures/products.csv")
+        importer = ProductDataImporter.new
 
-      importer.import(filename)
+        importer.import(filename)
 
-      expect(Product.count).to eq 3
-      last_product = Product.last
-      expect_product_to_match(
-        last_product,
-        "name_c",
-        "author_c",
-        Date.new(2019,1,3),
-        3000,
-        "0.53",
-        true,
-      )
+        expect(Product.count).to eq 3
+        last_product = Product.last
+        expect_product_to_match(
+          last_product,
+          "name_c",
+          "author_c",
+          Date.new(2019,3,1),
+          3000,
+          "0.53",
+          true,
+        )
+      end
+    end
+
+    context "when provided a xlsx file" do
+      it "creates product data from the data" do
+        filename = Rails.root.join("spec/fixtures/products.xlsx")
+        importer = ProductDataImporter.new
+
+        importer.import(filename)
+
+        expect(Product.count).to eq 4
+        last_product = Product.last
+        expect_product_to_match(
+          last_product,
+          "factory_bot",
+          "thoughtbot",
+          DateTime.new(2008, 5, 28),
+          9001,
+          "5.0.2",
+          true,
+        )
+      end
     end
   end
 
