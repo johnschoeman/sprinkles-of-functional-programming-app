@@ -1,8 +1,8 @@
-<li>
-  <%= product.name %>
-  <%= product.author %>
-  <%= product.version %>
-  <%= product.release_date %>
-  <%= product.value %>
-  <%= link_to "Show", product_url(product) %>
-</li>
+<tr>
+  <td><%= product.name %></td>
+  <td><%= product.author %></td>
+  <td><%= product.version %></td>
+  <td><%= product.release_date %></td>
+  <td><%= product.value %></td>
+  <td><%= link_to "Show", product_url(product) %></td>
+</tr>

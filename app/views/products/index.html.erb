@@ -1,15 +1,29 @@
-Products Index
+<h1>Products Index</h1>
 
-<ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Version</th>
+      <th>Release Date</th>
+      <th>Value</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
   <% products.each do |product| %>
     <%= render "product", product: product %>
   <% end %>
-</ul>
+  </tbody>
+</table>
 
 <%= link_to "Create a New Product", new_product_path %>
 
+<br/>
+
 <%= form_tag imports_path, multipart: true do %>
-  <label for="file">upload csv</label>
+  <label for="file">Upload csv</label>
   <%= file_field_tag "file" %>
   <%= submit_tag "Upload File" %>
 <% end %>
