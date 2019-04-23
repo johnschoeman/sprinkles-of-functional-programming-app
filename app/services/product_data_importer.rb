@@ -41,9 +41,10 @@ class ProductDataImporter
   end
 
   def process_data(data)
-    parse_active(data).then { |data| parse_release_date(data) }.then do |data|
-      Product.create(data)
-    end
+    parse_active(data).
+      then { |data| parse_release_date(data) }.
+      then { |data| parse_value(data) }.
+      then { |data| Product.create(data) }
   end
 
   def parse_active(data)
@@ -53,6 +54,12 @@ class ProductDataImporter
 
   def parse_release_date(data)
     data[:release_date] = Time.zone.parse(data[:release_date].to_i.to_s)
+    data
+  end
+
+  def parse_value(data)
+    value = data[:value].to_s
+    data[:value] = value.gsub(/^\$/, "").to_i
     data
   end
 end
