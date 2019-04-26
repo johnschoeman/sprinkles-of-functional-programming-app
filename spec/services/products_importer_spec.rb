@@ -15,7 +15,7 @@ RSpec.describe ProductDataImporter do
         last_product,
         "name_c",
         "author_c",
-        Time.zone.parse("20190302"),
+        Date.new(2019,1,3),
         3000,
         "0.53",
         true,
