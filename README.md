@@ -1,24 +1,30 @@
-# README
+# Sprinkles of Functional Programming
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Example application for the Rails Conf 2019 Talk: Sprinkles of Functional
+Programming.
 
-Things you may want to cover:
+Slides for the presentation can be found here:
 
-* Ruby version
+[slideshare](https://speakerdeck.com/johnschoeman/sprinkles-of-functional-programming)
 
-* System dependencies
+[slides-repo](https://github.com/johnschoeman/sprinkles-of-functional-programming/blob/master/deck.md)
 
-* Configuration
+---
 
-* Database creation
+This repo has three branches: master, object-oriented, functional.
 
-* Database initialization
+The end of the master branch is the starting point, the object-oriented and
+functional branches are the implementation of the same set of functionality done
+in an objected-oriented approach and a functional approach respectively.
 
-* How to run the test suite
+Feature Set:
 
-* Services (job queues, cache servers, search engines, etc.)
+0. Users can upload csvs of products
+1. Users can upload either csv or xlsx files
+2. Users can upload files where the value column has a leading '$'
 
-* Deployment instructions
+### Branches
+![branches](./doc/branches.png)
 
-* ...
+I would recommend walk through each commit of each branch to compare and
+contrast the differences in the styles.
